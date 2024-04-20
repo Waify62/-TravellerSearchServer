@@ -47,9 +47,6 @@ public class User {
     )
     private List<Travel> travels = new ArrayList<>();
 
-
     @Column(name = "profileDesc")
     private String profileDesc;
-
-
 }
