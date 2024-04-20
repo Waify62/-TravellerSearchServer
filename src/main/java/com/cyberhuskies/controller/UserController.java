@@ -2,7 +2,6 @@ package com.cyberhuskies.controller;
 
 import com.cyberhuskies.domain.User;
 import com.cyberhuskies.service.UserService;
-import com.cyberhuskies.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

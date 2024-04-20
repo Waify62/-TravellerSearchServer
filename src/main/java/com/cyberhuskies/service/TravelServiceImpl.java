@@ -12,9 +12,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class TravelServiceImpl implements TravelService{
-    private TravelDao travelDao;
-    
-    
+    private final TravelDao travelDao;
+
+
     public Travel add(Travel Travel) {
         return travelDao.save(Travel);
     }
@@ -24,7 +24,11 @@ public class TravelServiceImpl implements TravelService{
     }
 
     public Travel getById(long id) {
-        return travelDao.findById(id).orElse(null);
+        Optional<Travel> travelNullable = travelDao.findById(id);
+        if (travelNullable.isEmpty()){
+            throw new RuntimeException("Travel with ID "+id+" not found.");
+        }
+        return travelNullable.get();
     }
 
     public Travel update(long id, Travel Travel) {
@@ -32,13 +36,15 @@ public class TravelServiceImpl implements TravelService{
         if (travelNullable.isEmpty()){
             throw new RuntimeException("Travel with ID "+id+" not found.");
         }
+
         Travel updTravel = travelNullable.get();
         updTravel.setCity(Travel.getCity());
         updTravel.setCoordinates(Travel.getCoordinates());
         updTravel.setUsers(Travel.getUsers());
         updTravel.setStartDate(Travel.getStartDate());
         updTravel.setFinishDate(Travel.getFinishDate());
-        return travelDao.save(Travel);
+
+        return travelDao.save(updTravel);
     }
 
     public void deleteById(long id) {

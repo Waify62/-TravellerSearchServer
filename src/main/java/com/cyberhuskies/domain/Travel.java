@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class Travel {
     private String city;
     @Column(name = "coordinates")
     private String coordinates;
-    @ManyToMany(
+    @OneToMany(
             mappedBy="name",
             cascade = CascadeType.ALL
     )

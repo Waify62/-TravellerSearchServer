@@ -35,17 +35,17 @@ public class User {
     private String photoUrl;
 
     @OneToMany(
-        mappedBy="socialMediaName",
+        mappedBy="socialMediaURI",
         cascade = CascadeType.ALL,
         orphanRemoval = true
     )
     private List<ContactUri> contactUris = new ArrayList<>();
 
-    @ManyToMany(
-            mappedBy="city",
-            cascade = CascadeType.ALL
+    @ManyToOne
+    @JoinColumn(
+            name="travel_id"
     )
-    private List<Travel> travels = new ArrayList<>();
+    private Travel travel;
 
     @Column(name = "profileDesc")
     private String profileDesc;

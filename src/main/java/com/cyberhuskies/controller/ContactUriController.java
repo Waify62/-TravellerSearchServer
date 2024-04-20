@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class ContactUriController {
+
     private final ContactUriService contactUriService;
 
     @PostMapping("/contactUri")

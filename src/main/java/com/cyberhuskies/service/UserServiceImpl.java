@@ -12,9 +12,11 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private UserDao userDao;
+
+    private final UserDao userDao;
+
     public User add(User user) {
-        return userDao.save(user);
+        return this.userDao.save(user);
     }
 
     public List<User> getAll() {
@@ -34,12 +36,12 @@ public class UserServiceImpl implements UserService {
         updUser.setName(user.getName());
         updUser.setPhone(user.getPhone());
         updUser.setEmail(user.getEmail());
-        updUser.setTravels(user.getTravels());
+        updUser.setTravel(user.getTravel());
         updUser.setContactUris(user.getContactUris());
         updUser.setProfileDesc(user.getProfileDesc());
         updUser.setPhotoUrl(user.getPhotoUrl());
         // why save tho?!??!?
-        return userDao.save(user);
+        return userDao.save(updUser);
     }
 
     public void deleteById(long id) {
