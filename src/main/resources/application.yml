@@ -23,8 +23,3 @@ spring:
 
     # Показываем запросы
     show-sql: true
-
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-    operationsSorter: method

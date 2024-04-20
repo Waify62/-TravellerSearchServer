@@ -14,14 +14,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
     <!-- Spring-boot-starter-parent - это специальный стартер, который обеспечивает значения по умолчанию Maven.
-        Он также предоставляет раздел dependency-management (управления зависимостями),
-        так что вы можете опустить теги version для общераспространенных зависимостей. -->
+    Он также предоставляет раздел dependency-management (управления зависимостями),
+    так что вы можете опустить теги version для общераспространенных зависимостей. -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
+        <version>2.5.5</version>
     </parent>
 
     <dependencies>
@@ -65,34 +64,19 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Swagger — это набор инструментов для разработчиков API от SmartBear Software и бывшая спецификация,
-             на которой основана спецификация OpenAPI-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+        <!--        &lt;!&ndash; Swagger — это набор инструментов для разработчиков API от SmartBear Software и бывшая спецификация,-->
+        <!--             на которой основана спецификация OpenAPI&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.springfox</groupId>-->
+        <!--            <artifactId>springfox-boot-starter</artifactId>-->
+        <!--            <version>3.0.0</version>-->
+        <!--        </dependency>-->
 
-        <!--
-        Swagger для springboot 3.x+
-        ================================
-        application.yml конфигурация:
-        springdoc:
-            swagger-ui:
-                path: /swagger-ui.html
-                operationsSorter: method
-        ================================
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        -->
-<!--        <dependency>-->
-<!--            <groupId>org.springdoc</groupId>-->
-<!--            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
-<!--            <version>2.3.0</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springdoc</groupId>-->
+        <!--            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+        <!--            <version>2.3.0</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 

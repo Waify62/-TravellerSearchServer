@@ -1,10 +1,12 @@
 package com.cyberhuskies.domain;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.LazyToOne;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +23,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Column(name = "photoUrl")
@@ -40,6 +42,15 @@ public class User {
     )
     private List<ContactUri> contactInfo = new ArrayList<>();
 
+    @ManyToMany(
+            mappedBy="city",
+            cascade = CascadeType.ALL
+    )
+    private List<Travel> travels = new ArrayList<>();
+
+
     @Column(name = "profileDesc")
     private String profileDesc;
+
+
 }
