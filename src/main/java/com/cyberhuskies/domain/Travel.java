@@ -1,12 +1,17 @@
 package com.cyberhuskies.domain;
 
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -20,7 +25,17 @@ public class Travel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    // unfinished
-    private String s;
+    @Column(name = "startDate")
+    private String startDate;
+    @Column(name = "finishDate")
+    private String finishDate;
+    @Column(name = "city")
+    private String city;
+    @Column(name = "coordinates")
+    private String coordinates;
+    @ManyToMany(
+            mappedBy="name",
+            cascade = CascadeType.ALL
+    )
+    private List<User> users = new ArrayList<>();
 }

@@ -1,7 +1,8 @@
 package com.cyberhuskies.domain;
 
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "contactInfoUrl")
+@Table(name = "contactUri")
 public class ContactUri {
 
     @Id

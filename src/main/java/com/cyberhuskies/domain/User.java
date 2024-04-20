@@ -1,6 +1,7 @@
 package com.cyberhuskies.domain;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,25 +22,34 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Column(name = "photoUrl")
     private String photoUrl;
 
     @OneToMany(
-        mappedBy="socialMediaURI",
+        mappedBy="socialMediaName",
         cascade = CascadeType.ALL,
         orphanRemoval = true
     )
-    private List<ContactUri> contactInfo = new ArrayList<>();
+    private List<ContactUri> contactUris = new ArrayList<>();
+
+    @ManyToMany(
+            mappedBy="city",
+            cascade = CascadeType.ALL
+    )
+    private List<Travel> travels = new ArrayList<>();
+
 
     @Column(name = "profileDesc")
     private String profileDesc;
+
+
 }
