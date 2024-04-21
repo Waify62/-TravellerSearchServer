@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Parent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +35,9 @@ public class User {
     @Column(name = "photoUrl")
     private String photoUrl;
 
-    @OneToMany(
-        mappedBy="socialMediaURI",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true
-    )
-    private List<ContactUri> contactUris = new ArrayList<>();
-
     @ManyToOne
-    @JoinColumn(
-            name="travel_id"
-    )
+//    //                Travel.id
+    @JoinColumn(name="travel_id", nullable=true)
     private Travel travel;
 
     @Column(name = "profileDesc")

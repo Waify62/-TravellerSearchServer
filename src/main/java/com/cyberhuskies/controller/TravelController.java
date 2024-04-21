@@ -1,8 +1,10 @@
 package com.cyberhuskies.controller;
 
 import com.cyberhuskies.domain.Travel;
+import com.cyberhuskies.domain.User;
 import com.cyberhuskies.service.TravelService;
 import com.cyberhuskies.service.TravelServiceImpl;
+import com.cyberhuskies.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

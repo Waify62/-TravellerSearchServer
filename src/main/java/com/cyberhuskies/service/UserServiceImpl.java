@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
         updUser.setPhone(user.getPhone());
         updUser.setEmail(user.getEmail());
         updUser.setTravel(user.getTravel());
-        updUser.setContactUris(user.getContactUris());
         updUser.setProfileDesc(user.getProfileDesc());
         updUser.setPhotoUrl(user.getPhotoUrl());
         // why save tho?!??!?
