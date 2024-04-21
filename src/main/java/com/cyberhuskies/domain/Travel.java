@@ -1,16 +1,13 @@
 package com.cyberhuskies.domain;
 
-
 //import jakarta.persistence.*;
 import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.*;
-
 
 @Data
 @Entity
@@ -31,9 +28,9 @@ public class Travel {
     private String city;
     @Column(name = "coordinates")
     private String coordinates;
-    @OneToMany(
-            mappedBy="name",
-            cascade = CascadeType.ALL, fetch=FetchType.LAZY
-    )
-    private Set<User> users = new HashSet<>();
+
+//    @OneToMany(
+//            mappedBy="name"
+//    )
+//    private List<User> users = new ArrayList<>();
 }

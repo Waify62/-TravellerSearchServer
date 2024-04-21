@@ -4,16 +4,13 @@ import com.cyberhuskies.dao.TravelDao;
 import com.cyberhuskies.domain.Travel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 @RequiredArgsConstructor
 public class TravelServiceImpl implements TravelService{
     private final TravelDao travelDao;
-
 
     public Travel add(Travel Travel) {
         return travelDao.save(Travel);
@@ -40,7 +37,7 @@ public class TravelServiceImpl implements TravelService{
         Travel updTravel = travelNullable.get();
         updTravel.setCity(Travel.getCity());
         updTravel.setCoordinates(Travel.getCoordinates());
-        updTravel.setUsers(Travel.getUsers());
+//        updTravel.setUsers(Travel.getUsers());
         updTravel.setStartDate(Travel.getStartDate());
         updTravel.setFinishDate(Travel.getFinishDate());
 

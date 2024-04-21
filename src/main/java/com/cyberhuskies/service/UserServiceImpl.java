@@ -2,17 +2,14 @@ package com.cyberhuskies.service;
 
 import com.cyberhuskies.domain.User;
 import com.cyberhuskies.dao.UserDao;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-
     private final UserDao userDao;
 
     public User add(User user) {

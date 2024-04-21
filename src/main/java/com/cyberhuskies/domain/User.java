@@ -36,7 +36,6 @@ public class User {
     private String photoUrl;
 
     @ManyToOne
-//    //                Travel.id
     @JoinColumn(name="travel_id", nullable=true)
     private Travel travel;
 
